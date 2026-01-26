@@ -1,0 +1,58 @@
+<nav class="navbar">
+    <div class="logo">{{ companyName }}</div>
+    <ul class="nav-links">
+      <li><a href="#services">Leistungen</a></li>
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+  
+  <header class="hero" [style.background-image]="'url(assets/trucks.jpg)'">
+    <div class="hero-content">
+      <h1>Transporte & Erdbau</h1>
+      <p>Zuverlässig. Regional. Stark.</p>
+      <a href="#contact" class="btn-primary">Anfrage senden</a>
+    </div>
+  </header>
+  
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title">Unsere Leistungen</h2>
+      <div class="services-grid">
+        <div class="card">
+          <span class="icon">🚚</span>
+          <h3>Gütertransport</h3>
+          <p>Nationaler und internationaler Fernverkehr mit modernster Flotte.</p>
+        </div>
+        <div class="card">
+          <span class="icon">🏗️</span>
+          <h3>Erdbau</h3>
+          <p>Aushub- und Erdbewegungsarbeiten für private und gewerbliche Projekte.</p>
+        </div>
+        <div class="card">
+          <span class="icon">🪨</span>
+          <h3>Schüttgut</h3>
+          <p>Lieferung von Sand, Schotter und Kies direkt ab Werk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Kontakt</h4>
+        <p>Schermann & Zapfel Transporte GmbH<br>
+           Bundesstraße 10<br>
+           7412 Wiesfleck</p>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <p>UID-Nr: ATU12345678 (Beispiel)<br>
+           Geschäftsführung: Schermann / Zapfel</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; {{ currentYear }} {{ companyName }}
+    </div>
+  </footer>

@@ -1,0 +1,80 @@
+// Farbvariablen aus dem Bild
+$brand-red: #d32f2f;
+$truck-grey: #b0b5b9;
+$dark-bg: #222;
+$light-bg: #f9f9f9;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 5%;
+  background: $dark-bg;
+  color: white;
+  border-bottom: 4px solid $brand-red;
+  
+  .logo { font-size: 1.5rem; font-weight: bold; }
+  .nav-links { 
+    display: flex; list-style: none; gap: 20px;
+    a { color: white; text-decoration: none; &:hover { color: $brand-red; } }
+  }
+}
+
+.hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+
+  &::after { // Dunkler Filter damit Text lesbar ist
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+  }
+
+  .hero-content {
+    position: relative; z-index: 1;
+    h1 { font-size: 4rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+    p { font-size: 1.5rem; }
+  }
+}
+
+.section { padding: 80px 5%; background: $light-bg; }
+.section-title { text-align: center; margin-bottom: 50px; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  text-align: center;
+  border-bottom: 4px solid $truck-grey;
+  transition: 0.3s;
+  &:hover { border-color: $brand-red; transform: translateY(-5px); }
+  .icon { font-size: 3rem; display: block; margin-bottom: 20px; }
+}
+
+.btn-primary {
+  background: $brand-red;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  border-radius: 2px;
+}
+
+.footer {
+  background: $dark-bg;
+  color: #ccc;
+  padding: 50px 5% 20px;
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .copyright { text-align: center; margin-top: 40px; border-top: 1px solid #444; padding-top: 20px; }
+}
