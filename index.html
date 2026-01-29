@@ -3,37 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schermann & Zapfel | Transporte</title>
+    <title>Schermann & Zapfel | Premium Logistik</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>SCHERMANN & ZAPFEL</h1>
-            <p>Transporte & Logistik</p>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">S&Z <span>TRANSPORTE</span></div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Leistungen</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <img src="assets/trucks.jpg" alt="Flotte" class="hero-img">
+        <div class="hero-text">
+            <h1>PRÄZISION AUF <br><span>JEDER STRASSE.</span></h1>
+            <p>Ihr zuverlässiger Partner für europaweite Logistiklösungen.</p>
+            <a href="#contact" class="btn">Angebot anfordern</a>
         </div>
     </header>
 
-    <section class="hero">
-        <img src="assets/trucks.jpg" alt="Unsere Flotte" class="hero-image">
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Unsere Leistungen</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Fernverkehr</h3>
+                    <p>Sichere und pünktliche Lieferung Ihrer Güter quer durch Europa mit modernster Flotte.</p>
+                </div>
+                <div class="card">
+                    <h3>Terminfrahten</h3>
+                    <p>Wenn es schnell gehen muss: Express-Logistik mit höchster Priorität und Echtzeit-Tracking.</p>
+                </div>
+                <div class="card">
+                    <h3>Spezialtransporte</h3>
+                    <p>Besondere Anforderungen brauchen besondere Lösungen. Wir planen Ihren Schwertransport.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="content container">
-        <h2>Zuverlässigkeit auf jeder Meile</h2>
-        <p>Willkommen bei Schermann & Zapfel. Wir sind Ihr starker Partner für professionelle Transportlösungen.</p>
-        
-        <div class="contact-box">
-            <h3>Kontakt</h3>
-            <p>📍 Musterstraße 1, 12345 Stadt</p>
-            <p>📞 +43 123 456 789</p>
-            <p>✉️ office@schermann-zapfel.at</p>
+    <section id="about" class="section dark-bg">
+        <div class="container flex">
+            <div class="text-block">
+                <h2 class="section-title">Über Schermann & Zapfel</h2>
+                <p>Seit Jahren stehen wir für Vertrauen und Qualität im Transportwesen. Unser Familienunternehmen verbindet traditionelle Werte mit moderner Logistik-Technologie.</p>
+                <ul class="check-list">
+                    <li>✓ 100% Termintreue</li>
+                    <li>✓ Erfahrene Berufskraftfahrer</li>
+                    <li>✓ Moderner, schadstoffarmer Fuhrpark</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Kontaktieren Sie uns</h2>
+            <div class="contact-wrapper">
+                <div class="info">
+                    <p><strong>Zentrale:</strong> Musterstraße 1, 12345 Stadt</p>
+                    <p><strong>Telefon:</strong> +43 123 456 789</p>
+                    <p><strong>E-Mail:</strong> office@schermann-zapfel.at</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Schermann & Zapfel Transporte</p>
+        <p>&copy; 2026 Schermann & Zapfel Transporte | <a href="#">Impressum</a> | <a href="#">Datenschutz</a></p>
     </footer>
 
 </body>
