@@ -1,1 +1,57 @@
-body{margin:0;font-family:Roboto,sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}h1,h2,h3,h4,.logo{font-family:Oswald,sans-serif;text-transform:uppercase}.container{max-width:1200px;margin:0 auto;padding:0 20px}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+header {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.content {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.contact-box {
+    background: #f4f4f4;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+footer {
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #1a1a1a;
+    text-align: center;
+}
