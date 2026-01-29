@@ -87,8 +87,9 @@ nav ul li a:hover { color: var(--primary); }
 }
 
 .hero-text { z-index: 1; padding: 20px; }
-.hero-text h1 { font-family: 'Oswald', sans-serif; font-size: 4rem; margin: 0; line-height: 1.1; }
-.hero-text h1 span { color: var(--primary); }
+.hero-text h1 { font-family: 'Oswald', sans-serif; font-size: 4rem; margin: 0; line-height: 1.1; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);}
+.hero-text h1 span { color: var(--primary); color: var(--light);
+    border-bottom: 5px solid var(--primary);}
 .hero-text p { font-size: 1.2rem; color: var(--text-muted); margin: 20px 0 40px; }
 
 /* Buttons im Blau der Flotte */
@@ -118,8 +119,8 @@ nav ul li a:hover { color: var(--primary); }
 }
 
 .card:hover {
-    border-top-color: var(--primary-light);
-    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.4);
+    border-top-color: var(--light);
 }
 
 /* Logo-Farbe anpassen */
