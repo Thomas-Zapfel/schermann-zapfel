@@ -150,3 +150,41 @@ footer {
     color: var(--text-muted);
 }
 footer a { color: var(--text-muted); text-decoration: none; margin: 0 10px; }
+
+.badge {
+    background: rgba(0, 51, 102, 0.3); /* Transparentes Blau */
+    padding: 10px 20px;
+    border-radius: 4px; /* Eckiger wirkt oft seriöser */
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid var(--primary);
+    color: var(--light);
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+/* Hero Badges */
+.hero-badges {
+    margin-bottom: 30px;
+}
+
+/* Trust Cards */
+.trust-card {
+    text-align: center;
+    padding: 30px;
+}
+.trust-card .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+.trust-card h3 {
+    color: var(--light);
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 15px;
+}
+.trust-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
