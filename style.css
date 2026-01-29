@@ -194,3 +194,9 @@ footer a { color: var(--text-muted); text-decoration: none; margin: 0 10px; }
         font-size: 2.2rem; /* Verkleinert die Schrift auf Handys, damit das lange Wort passt */
     }
 }
+.hero-text h1 span {
+    color: var(--light);
+    border-bottom: 5px solid var(--primary);
+    letter-spacing: 4px; /* Macht den Text breiter und mächtiger */
+    text-transform: uppercase;
+}
