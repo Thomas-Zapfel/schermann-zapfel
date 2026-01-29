@@ -1,9 +1,11 @@
 :root {
-    --primary: #ff4d00;
-    --dark: #0f0f0f;
+    /* Die neuen LKW-Farben */
+    --primary: #003366;       /* Kräftiges Dunkelblau */
+    --primary-light: #004a94; /* Ein helleres Blau für Hover-Effekte */
+    --accent: #d1d1d1;        /* Silber/Grau für Akzente */
+    --dark: #050a14;          /* Fast schwarzes Dunkelblau für den Hintergrund */
     --light: #ffffff;
-    --gray: #1e1e1e;
-    --text-muted: #a0a0a0;
+    --text-muted: #b0b8c4;
 }
 
 * {
@@ -44,7 +46,6 @@ nav {
 }
 
 .logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; letter-spacing: 2px; }
-.logo span { color: var(--primary); }
 
 nav ul { display: flex; list-style: none; }
 nav ul li a {
@@ -90,18 +91,41 @@ nav ul li a:hover { color: var(--primary); }
 .hero-text h1 span { color: var(--primary); }
 .hero-text p { font-size: 1.2rem; color: var(--text-muted); margin: 20px 0 40px; }
 
+/* Buttons im Blau der Flotte */
 .btn {
     background: var(--primary);
     color: white;
     padding: 15px 40px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 4px;
-    transition: transform 0.3s;
+    border-radius: 2px; /* Etwas kantiger, wie ein LKW */
+    border-bottom: 3px solid #002244;
+    transition: all 0.3s;
     display: inline-block;
 }
-.btn:hover { transform: translateY(-5px); }
 
+.btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* Karten mit blauer Kante */
+.card {
+    background: #111827;
+    padding: 40px;
+    border-top: 4px solid var(--primary); /* Blaue Linie oben */
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    border-top-color: var(--primary-light);
+    transform: scale(1.02);
+}
+
+/* Logo-Farbe anpassen */
+.logo span {
+    color: var(--primary-light);
+}
 /* Sections & Cards */
 .section-title { font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; }
 .dark-bg { background-color: var(--gray); }
@@ -112,13 +136,6 @@ nav ul li a:hover { color: var(--primary); }
     gap: 30px;
 }
 
-.card {
-    background: #1a1a1a;
-    padding: 40px;
-    border-left: 4px solid var(--primary);
-    transition: background 0.3s;
-}
-.card:hover { background: #252525; }
 .card h3 { margin-top: 0; color: var(--primary); }
 
 .check-list { list-style: none; padding: 0; }
