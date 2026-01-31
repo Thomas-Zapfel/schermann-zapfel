@@ -1,13 +1,15 @@
 :root {
-    /* Die neuen LKW-Farben */
+    /* Die LKW-Farben der Flotte */
     --primary: #003366;       /* Kräftiges Dunkelblau */
-    --primary-light: #004a94; /* Ein helleres Blau für Hover-Effekte */
-    --accent: #d1d1d1;        /* Silber/Grau für Akzente */
-    --dark: #050a14;          /* Fast schwarzes Dunkelblau für den Hintergrund */
+    --primary-light: #004a94; /* Hellere Blau-Akzente */
+    --accent: #d1d1d1;        /* Silber/Grau */
+    --dark: #050a14;          /* Hintergrund (Mitternachtsblau) */
     --light: #ffffff;
     --text-muted: #b0b8c4;
+    --gray-bg: #111827;       /* Karten-Hintergrund */
 }
 
+/* Grundlegendes Setup */
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -19,13 +21,19 @@ body {
     background-color: var(--dark);
     color: var(--light);
     line-height: 1.6;
+    overflow-x: hidden; /* Verhindert seitliches Wackeln am Handy */
 }
 
-.container { width: 90%; max-width: 1200px; margin: auto; padding: 60px 20px; }
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: auto; 
+    padding: 60px 20px; 
+}
 
-/* Navigation */
+/* --- Navigation --- */
 nav {
-    background: rgba(15, 15, 15, 0.95);
+    background: rgba(5, 10, 20, 0.95);
     height: 80px;
     display: flex;
     align-items: center;
@@ -33,7 +41,7 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-container {
@@ -45,9 +53,17 @@ nav {
     align-items: center;
 }
 
-.logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; letter-spacing: 2px; }
+.logo { 
+    font-family: 'Oswald', sans-serif; 
+    font-size: 1.5rem; 
+    letter-spacing: 2px; 
+    display: flex;
+    align-items: center;
+}
 
-nav ul { display: flex; list-style: none; }
+.logo span { color: var(--primary-light); }
+
+nav ul { display: flex; list-style: none; padding: 0; }
 nav ul li a {
     color: var(--light);
     text-decoration: none;
@@ -57,9 +73,9 @@ nav ul li a {
     text-transform: uppercase;
     transition: color 0.3s;
 }
-nav ul li a:hover { color: var(--primary); }
+nav ul li a:hover { color: var(--primary-light); }
 
-/* Hero Section */
+/* --- Hero Section --- */
 .hero {
     height: 100vh;
     display: flex;
@@ -82,79 +98,41 @@ nav ul li a:hover { color: var(--primary); }
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(15,15,15,1));
+    background: linear-gradient(to bottom, rgba(0,35,102,0.6), rgba(5,10,20,1));
     z-index: 0;
 }
 
-.hero-text { z-index: 1; padding: 20px; }
-.hero-text h1 { font-family: 'Oswald', sans-serif; font-size: 4rem; margin: 0; line-height: 1.1; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);}
-.hero-text h1 span { color: var(--primary); color: var(--light);
-    border-bottom: 5px solid var(--primary);}
-.hero-text p { font-size: 1.2rem; color: var(--text-muted); margin: 20px 0 40px; }
+.hero-text { z-index: 1; padding: 20px; width: 100%; max-width: 900px; }
 
-/* Buttons im Blau der Flotte */
-.btn {
-    background: var(--primary);
-    color: white;
-    padding: 15px 40px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 2px; /* Etwas kantiger, wie ein LKW */
-    border-bottom: 3px solid #002244;
-    transition: all 0.3s;
-    display: inline-block;
+.hero-text h1 { 
+    font-family: 'Oswald', sans-serif; 
+    font-size: 4rem; 
+    margin: 0; 
+    line-height: 1.1; 
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
-.btn:hover {
-    background: var(--primary-light);
-    transform: translateY(-2px);
+.hero-text h1 span { 
+    color: var(--light);
+    border-bottom: 5px solid var(--primary);
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
-/* Karten mit blauer Kante */
-.card {
-    background: #111827;
-    padding: 40px;
-    border-top: 4px solid var(--primary); /* Blaue Linie oben */
-    transition: transform 0.3s, border-color 0.3s;
+.hero-text p { 
+    font-size: 1.2rem; 
+    color: var(--text-muted); 
+    margin: 20px auto 40px;
+    max-width: 700px;
 }
 
-.card:hover {
-    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.4);
-    border-top-color: var(--light);
-}
-
-/* Logo-Farbe anpassen */
-.logo span {
-    color: var(--primary-light);
-}
-/* Sections & Cards */
-.section-title { font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; }
-.dark-bg { background-color: var(--gray); }
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.card h3 { margin-top: 0; color: var(--primary); }
-
-.check-list { list-style: none; padding: 0; }
-.check-list li { margin-bottom: 15px; font-size: 1.1rem; }
-
-footer {
-    text-align: center;
-    padding: 40px;
-    border-top: 1px solid #333;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-footer a { color: var(--text-muted); text-decoration: none; margin: 0 10px; }
+/* --- Badges & Buttons --- */
+.hero-badges { margin-bottom: 30px; }
 
 .badge {
-    background: rgba(0, 51, 102, 0.3); /* Transparentes Blau */
+    background: rgba(0, 51, 102, 0.3);
     padding: 10px 20px;
-    border-radius: 4px; /* Eckiger wirkt oft seriöser */
+    border-radius: 4px;
     font-size: 0.9rem;
     font-weight: bold;
     letter-spacing: 1px;
@@ -164,39 +142,93 @@ footer a { color: var(--text-muted); text-decoration: none; margin: 0 10px; }
     margin: 10px 5px;
 }
 
-/* Hero Badges */
-.hero-badges {
-    margin-bottom: 30px;
+.btn {
+    background: var(--primary);
+    color: white;
+    padding: 18px 45px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 2px;
+    border-bottom: 3px solid #002244;
+    transition: all 0.3s;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
+
+.btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 51, 102, 0.4);
+}
+
+/* --- Sections & Cards --- */
+.section-title { 
+    font-family: 'Oswald', sans-serif; 
+    font-size: 2.5rem; 
+    margin-bottom: 40px; 
+    text-transform: uppercase; 
+    text-align: center;
+}
+
+.dark-bg { background-color: var(--gray-bg); }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #0f172a;
+    padding: 40px;
+    border-top: 4px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.4);
+    border-top-color: var(--light);
+    transform: translateY(-5px);
+}
+
+.card h3 { margin-top: 0; color: var(--primary-light); }
 
 /* Trust Cards */
-.trust-card {
+.trust-card { text-align: center; padding: 20px; }
+.trust-card .icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+.trust-card h3 { color: var(--light); font-family: 'Oswald', sans-serif; }
+
+/* --- Footer --- */
+footer {
     text-align: center;
-    padding: 30px;
-}
-.trust-card .icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    display: block;
-}
-.trust-card h3 {
-    color: var(--light);
-    font-family: 'Oswald', sans-serif;
-    margin-bottom: 15px;
-}
-.trust-card p {
+    padding: 60px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
     color: var(--text-muted);
-    font-size: 0.95rem;
+}
+footer a { color: var(--accent); text-decoration: none; margin: 0 10px; }
+footer a:hover { color: var(--light); }
+
+/* --- MOBILE OPTIMIERUNG --- */
+@media (max-width: 768px) {
+    nav { height: auto; position: relative; }
+    .nav-container { flex-direction: column; padding: 20px; }
+    nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+    nav ul li a { margin: 5px 10px; font-size: 0.8rem; }
+    
+    .hero { height: auto; padding: 120px 0 80px; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-text p { font-size: 1rem; }
+    
+    .grid { grid-template-columns: 1fr; }
+    .container { padding: 40px 20px; }
+    
+    .btn { width: 100%; text-align: center; }
+    .badge { display: block; margin: 10px 0; }
 }
 
-@media (max-width: 600px) {
-    .hero-text h1 {
-        font-size: 2.2rem; /* Verkleinert die Schrift auf Handys, damit das lange Wort passt */
-    }
-}
-.hero-text h1 span {
-    color: var(--light);
-    border-bottom: 5px solid var(--primary);
-    letter-spacing: 4px; /* Macht den Text breiter und mächtiger */
-    text-transform: uppercase;
+@media (max-width: 480px) {
+    .hero-text h1 { font-size: 2rem; }
+    .section-title { font-size: 1.8rem; }
 }
